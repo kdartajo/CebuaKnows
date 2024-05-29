@@ -1,0 +1,58 @@
+﻿@model IEnumerable<GuestResponse>;
+@{
+	Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width:device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>
+        Thank You!!!
+    </title>
+    <style>
+        .description {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding:20px;">
+        <a class="navbar-brand" asp-action="Index">CebuaKnows</a>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" asp-action="Index">Home</a>
+                <a class="nav-item nav-link" asp-action="ListReponses">Tour</a>
+                <a class="nav-item nav-link" asp-action="RsvpForm">Publish Tour</a>
+                <a class="nav-item nav-link " href="#">Contacts</a>
+            </div>
+        </div>
+    </nav>
+    <div class="text-center p-2">
+            <h1 class="text-center">Have Fun Touring!!</h1><br />
+        <div class="container">
+            <div class="row">
+                    @foreach (GuestResponse r in Model!)
+                    {
+                       
+                            <div class="card" style="width: 18rem; margin-right:20px; padding:20px;">
+                                <img class="card-img-top" src="~/images/@(r.ImageFileName)" alt="Card image cap" style="height:18rem">
+                                <div class="card-body">
+                                    <a asp-action="Explore" style=" text-decoration:none;" asp-route-place="@r.Place"><h5 class="card-title" style="text-align:left;">@r.Place</h5></a>
+                                    <p class="card-text description" style="text-align:left">@r.Description</p>
+                                    <p class="card-text" style="text-align:right; color:gray;">@r.Author</p>
+                                    
+                                </div>
+                           
+                            </div>
+                        
+                    }
+                </div>
+                </div>
+    </div>
+</body>
+</html>

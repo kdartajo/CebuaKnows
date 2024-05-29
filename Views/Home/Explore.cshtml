@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+
+@model             GuestResponse
+
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width:device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>
+        Thank You!!!
+    </title>
+   
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding:20px;">
+        <a class="navbar-brand" asp-action="Index">CebuaKnows</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link " href="#">Home</a>
+                <a class="nav-item nav-link" href="#">About Us</a>
+                <a class="nav-item nav-link active" href="#">Tours</a>
+                <a class="nav-item nav-link " href="#">Contacts</a>
+            </div>
+        </div>
+    </nav>
+    <div>
+
+
+
+        <div style="width: 18rem; margin:auto; padding:20px;">
+            <img class="card-img-top" src="~/images/@Model.ImageFileName" alt="Card image cap" style="height:18rem">
+            <div>
+                <h5 style="text-align:left;">@Model.Place</h5>
+                <p style="text-align:left">@Model.Description</p>
+                <p style="text-align:right; color:gray;">@Model.Author</p>
+            </div>
+        </div>
+
+                
+    </div>
+       
+</body>
+</html>

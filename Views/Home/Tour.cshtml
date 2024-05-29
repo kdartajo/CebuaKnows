@@ -1,0 +1,406 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width:device-width" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/w3.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Acme&family=Chivo:ital,wght@0,100..900;1,100..900&family=Lilita+One&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/35e055efcd.js" crossorigin="anonymous"></script>
+        <title>
+            Explore Cebu
+        </title>
+    </head>
+    <body class="tourbody">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding:10px 20px;">
+        <!--<a class="navbar-brand" asp-action="Index">CebuaKnows</a>-->
+        <a asp-action="Index"><img src="~/images/cebuaknowslogo.png" height="auto" width="120px"></a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" asp-action="Index">HOME</a>
+                <div class="dropdown hover-nav">
+                    <a class="nav-item nav-link active" asp-action="Tour">EXPLORE CEBU</a>
+                    <div class="dropdown-content">
+                        <a asp-action="Tour">All Local Heritage Sites</a>
+                        <a href="/Home/Tour#historic_sites">Historic Sites</a>
+                        <a href="/Home/Tour#religious_sites">Religious Sites</a>
+                        <a href="/Home/Tour#landmarks">Landmarks</a>
+                    </div>
+                </div>
+                <a class="nav-item nav-link" asp-action="History">HISTORY</a>
+                <a class="nav-item nav-link" asp-action="Contacts">CONTACT US</a>
+            </div>
+        </div>
+    </nav>
+    <div style="margin:50px"></div>
+    <button onclick="topFunction()" id="scrollTopBtn" title="Go to top"><i class="fa-solid fa-angles-up"></i></button>
+    <div>
+        <div class="col-xs-1" align="center" style="margin-bottom: 30px">
+            <button class="btn btn-danger" asp-action="History" style="margin-right: 10px">Learn Cebu's History</button>
+            <a class="btn btn-danger" href="#historic_sites" style="margin-right: 10px">Historic Sites</a>
+            <a class="btn btn-danger" href="#religious_sites" style="margin-right: 10px">Religious Sites</a>
+            <a class="btn btn-danger" href="#landmarks" style="margin-right: 10px">Famous Landmarks</a>
+        </div>
+        <div class="text-center container">
+            <div style="height: 12px; width: 5%; display: inline-block; margin: 0 10px; background-color: black"></div>
+            <p class="lilita-one-regular" style="display: inline-block; margin-top: 30px; font-weight: bold; font-size: 20px">ABOUT THE WONDROUS ISLAND OF CEBU</p>
+            <div style="height: 12px; width: 5%; display: inline-block; margin: 0 10px; background-color: black"></div>
+            <p class="chivo-font" style="width: 70%; text-align: center; display: inline-block; margin: 50px 0 50px 0; line-height: 2.0">
+                Cebu City throbs with a contagious energy. A bustling port city steeped in history, it boasts remnants of 
+                Spanish colonial grandeur alongside modern skyscrapers.  Throngs of locals and visitors navigate vibrant 
+                streets lined with delicious street food stalls and trendy cafes.  Beyond the urban center, pristine beaches 
+                and lush landscapes beckon nature lovers, while adventurous souls can explore nearby islands. Cebu City is a 
+                captivating blend of the old and new, where the echoes of the past meet the energy of a modern metropolis.
+            </p>
+            <div style="height: 12px; width: 40%; display: inline-block; background-color: black; margin-bottom: 30px"></div>
+        </div>
+        <br>
+        <div>
+            <div class="p-2" style="background-color: #FFF5EE; width: 100%;">
+                <div class="slideshow-container" style="margin-bottom: -30px">
+                    <div class="mySlides">
+                        <img src="~/images/fortsanpedro.jpg" alt="Fort San Pedro">
+                        <div class="description">Fort San Pedro</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="~/images/kotafort.jpg" alt="Kota Heritage Park">
+                        <div class="description">Kota Heritage Park</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="~/images/mactanshrine.jpg" alt="Mactan Shrine">
+                        <div class="description">Mactan Shrine</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="~/images/magellanscross.jpg" alt="Magellan's Cross">
+                        <div class="description">Magellan's Cross</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="~/images/plazaindependencia.jpg" alt="Plaza Independencia">
+                        <div class="description">Plaza Independencia</div>
+                    </div>
+                    <center>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </center>
+                </div>
+                <div class="dot-container" style="margin-bottom: 25px">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 60px">
+            <div class="lilita-one-regular" style="border-left: 15px solid #dc3545; font-size: 60px" id="historic_sites">&nbsp;&nbsp;Historic Sites</div>
+            <p class="chivo-font" style="text-align:justify; margin-top: 30px; padding: 20px; line-height: 2.0">
+                Cebu's historical sites are like weathered storytellers, their aged facades whispering tales of a vibrant past.
+                Worn forts stand guard, their stones etched with memories of conquest and defense. Grand houses, adorned with
+                intricate carvings, offer glimpses into the lives of past residents. Some structures speak of foreign influences,
+                their architecture echoing the arrival of new cultures. Others, with a more defiant air, commemorate local heroes
+                who stood against change. Together, these historical sites become a captivating tapestry, weaving a story of
+                encounters, faith, resilience, and the enduring spirit that continues to define Cebu.
+            </p>
+            <div style="margin-left: 80px">
+                <p class="acme-regular" style="font-size: 40px">1. &nbsp;Magellan's Cross</p>
+                <div class="content">
+                    <img src="~/images/magellanscross.jpg" class="image" alt="Magellan's Cross">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        Magellan's Cross is a revered landmark in Cebu City, Philippines. It's a large wooden
+                        cross encased within a an octagonal-shaped pavilion made of adobe and red tiles. While the original
+                        cross planted by Magellan in 1521 is believed to be inside, it's encased for protection due to its
+                        historical significance and past chipping by devotees. The site is a popular pilgrimage destination
+                        and stands as a potent symbol of the arrival of Christianity in the Philippines.
+                        <br>
+                        <br>
+                        <b>Location: </b>P. Burgos St, Cebu City, 6000 Cebu
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">2. &nbsp;Fort San Pedro</p>
+                <div class="content">
+                    <img src="~/images/fortsanpedro.jpg" class="image" alt="Fort San Pedro">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        Built in the 1700s, this triangular fortress is the oldest and most compact of its kind in the
+                        Philippines. Cannons still point towards the sea, hinting at the fort's role in
+                        defending Cebu from invaders.  Venture inside and explore remnants of Spanish architecture, perhaps
+                        picturing soldiers patrolling the grounds.  A museum within the fort's walls houses various artifacts,
+                        whispering tales of battles, the lives of those who served here, and the enduring spirit of a bygone era.
+                        Today, Fort San Pedro offers a glimpse into Cebu's past, a place where history buffs and curious
+                        explorers can wander and lose themselves in the stories etched in stone.
+                        <br>
+                        <br>
+                        <b>Location: </b>A. Pigafetta Street, Cebu City, 6000 Cebu
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">3. &nbsp;Yap-Sandiego Ancestral House</p>
+                <div class="content">
+                    <img src="~/images/yap_sandiego.jpg" class="image" alt="Yap-Sandiego Ancestral House">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        Step back in time at the Yap-San Diego Ancestral House in Cebu City. This grand residence, built in the 
+                        1600s, is one of the oldest houses in the Philippines.  Imagine a unique architectural blend - a fusion 
+                        of Chinese and Spanish styles, evident in the coral stone walls and intricate woodwork.  Venture inside 
+                        and explore a treasure trove of antique furniture and decorations. Each piece whispers stories of the 
+                        lives of a prominent Filipino family from centuries ago, offering a glimpse into their customs and 
+                        social standing.
+                        <br>
+                        <br>
+                        <b>Location: </b>155 Mabini St, Cebu City, 6000 Cebu
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">4. &nbsp;Mactan Shrine</p>
+                <div class="content">
+                    <img src="~/images/mactanshrine.jpg" class="image" alt="Mactan Shrine">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        Across the channel from Cebu City lies Mactan Island, where the Mactan Shrine honors a defining moment
+                        in Philippine history. This open-air park isn't a museum filled with artifacts, but a powerful symbol.
+                        A towering bronze statue of Lapu-Lapu, the chieftain who defeated Magellan in 1521, stands resolute, a
+                        testament to Filipino resistance. Visitors can wander the scenic grounds, soaking in the sea views or
+                        the atmosphere of quiet contemplation. The Mactan Shrine's strength lies in its simplicity, allowing
+                        you to connect with the past and appreciate the enduring spirit of the Cebuano people.
+                        <br>
+                        <br>
+                        <b>Location: </b>Mactan Shrine, Lapu-Lapu City, Cebu
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">5. &nbsp;Cebu Heritage Monument</p>
+                <div class="content">
+                    <img src="~/images/cebumonument.jpg" class="image" alt="Cebu Heritage Monument">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        Cebu Heritage Monument stands as a captivating open-air history book. Made from a unique blend of bronze,
+                        brass, and steel, this sculptural tableau isn't just a monument, but a visual journey through Cebu's 
+                        past.  Imagine a series of figures frozen in time, depicting key events like the arrival of Magellan, 
+                        the first baptism in Cebu, and even the Battle of Mactan.  Strolling by the monument allows you to grasp
+                        the island's rich tapestry, from encounters with foreign powers to moments of religious significance. 
+                        It's a great starting point for anyone curious to delve deeper into Cebu's fascinating history.
+                        <br>
+                        <br>
+                        <b>Location: </b>Sikatuna St, Cebu City, 6000 Cebu
+                    </p>
+                </div>
+            </div>
+            <div class="lilita-one-regular" style="border-left: 15px solid #dc3545; font-size: 60px; margin-top: 100px" id="religious_sites">&nbsp;&nbsp;Sacred/Religious Sites</div>
+            <p class="chivo-font" style="text-align:justify; margin-top: 30px; padding: 20px; line-height: 2.0">
+                Steeped in history, Cebu's religious sites are testaments to the island's enduring faith.  One, a grand old 
+                church with intricate details, stands as the oldest in the Philippines. Inside, flickering candles illuminate a 
+                revered statue, a symbol of devotion that has captivated hearts for centuries.  Across the water, a simpler kind
+                of reverence is found. Here, a powerful statue of a local hero embodies resistance and cultural pride, a 
+                reminder of a pivotal moment when faith and local identity intersected.  These evocative landmarks reveal the 
+                profound influence of religion on Cebu's past, where encounters with foreign powers intertwined with deep-rooted
+                beliefs to shape the vibrant island it is today.
+            </p>
+            <div style="margin-left: 80px">
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">1. &nbsp;Basilica Minore del Santo Niño</p>
+                <div class="content">
+                    <img src="~/images/basilica.jpg" class="image" alt="Basilica Minore del Santo Niño">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        Cebu's Basilica Minore del Santo Niño is a treasure trove of history and devotion. This landmark is not 
+                        just the oldest church in the Philippines, dating back to the 1500s, but also a center of pilgrimage. 
+                        Imagine a grand facade with intricate details, leading you inside a sanctuary that holds the Santo Niño 
+                        (Holy Child Jesus) statue. This revered icon, believed to be a gift from Magellan's voyage, has 
+                        captivated hearts for centuries.  The Basilica Minore del Santo Niño is a vibrant place, filled with 
+                        flickering candles, prayers, and a palpable sense of faith. It's a must-visit for those seeking cultural
+                        immersion or a glimpse into the enduring religious traditions of Cebu.
+                        <br>
+                        <br>
+                        <b>Location: </b>Pilgrim’s Center, Osmeña Blvd, Cebu City, 6000 Cebu
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">2. &nbsp;Cebu taoist temple </p>
+                <div class="content">
+                    <img src="~/images/taoisttemple.jpg" class="image" alt="Cebu taoist temple ">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        High on a Cebu hillside, the Taoist Temple offers a vibrant contrast to the island's Christian landmarks.
+                        Built in the 1970s, it's a colorful complex with intricate carvings and brightly painted statues 
+                        depicting figures from Taoist mythology. Unlike some monasteries, it welcomes visitors to wander the
+                        serene grounds and soak in the tranquil atmosphere, serving as a place of worship for Cebu's Chinese 
+                        Filipino community and showcasing the island's diverse religious tapestry.
+                        <br>
+                        <br>
+                        <b>Location: </b>Beverly Hills Subdivision, Lahug, Cebu City.
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">3. &nbsp;Monastery of the Holy Eucharist</p>
+                <div class="content">
+                    <img src="~/images/simala.jpg" class="image" alt="Simala Shrine">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        A captivating climb through Cebu's scenic hills leads to Simala Shrine, a haven famous for its revered
+                        Marian image. This castle-like church boasts a recent history. In the late 1990s, a woman named Terry
+                        Brooks arrived with a Virgin Mary icon. Offered sanctuary by Marian Monks, the image gained a reputation
+                        for miracles, especially during a dengue outbreak. News of the Virgin Mary's "tears" spread, and Simala
+                        Shrine became a pilgrimage destination, a testament to Cebu's enduring Marian devotion.
+                        <br>
+                        <br>
+                        <b>Location: </b>Barangay Lindogon, Sibonga, Cebu.
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">4. &nbsp;Temple of Leah</p>
+                <div class="content">
+                    <img src="~/images/leahtemple.jpg" class="image" alt="Temple of Leah">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        The Temple of Leah in Cebu City is a head-turning landmark inspired by Roman architecture. Imagine a 
+                        grand, multi-story mansion built in the 1700s, but constructed much later in 2012.  This isn't a 
+                        historical site, but a modern monument to love.  Built by a wealthy businessman for his late wife, Leah,
+                        it houses her favorite things, statues of angels and lions, and even a 10-foot statue of Leah herself. 
+                        It's a unique blend of museum, art gallery, and a place of personal tribute, offering a glimpse into a 
+                        grand romantic gesture.
+                        <br>
+                        <br>
+                        <b>Location: </b>Cebu Transcentral Hwy, Cebu City, 6000 Cebu
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">5. &nbsp;Sto. Thomas de Villanueva Parish</p>
+                <div class="content">
+                    <img src="~/images/stotomas.jpg" class="image" alt="Sto. Thomas de Villanueva Parish">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        Built between 1880 and 1893, Santo Tomas de Villanueva Parish in Pardo, Cebu City is a 19th-century 
+                        Roman Catholic gem. Once part of San Nicolas Parish, it became independent in 1866. The church stuns 
+                        with its fortress-like facade, a unique feature compared to other Cebuano churches, and stands as a 
+                        testament to both the area's faith and its historical resilience after undergoing repairs and an 
+                        earthquake.
+                        <br>
+                        <br>
+                        <b>Location: </b>Pardo, Cebu City, Cebu.
+                    </p>
+                </div>
+            </div>
+            <div class="lilita-one-regular" style="border-left: 15px solid #dc3545; font-size: 60px; margin-top: 100px" id="landmarks">&nbsp;&nbsp;Landmarks and Points of Interest</div>
+            <p class="chivo-font" style="text-align:justify; margin-top: 30px; padding: 20px; line-height: 2.0">
+                Cebu City unveils its fascinating past through a tapestry of historical gems.  Wander down cobbled streets lined
+                with heritage buildings, remnants of a bygone colonial era.  Explore a grand institution brimming with 
+                captivating exhibits, or step back in time at grand ancestral homes that whisper stories of prominent families.
+                Ascend to a vantage point for breathtaking cityscapes, and pay homage to local heroes at a modern monument that
+                celebrates their legacy. Cebu City's historical treasures, beyond its ancient fortifications, promise an 
+                immersive journey for any explorer.
+            </p>
+            <div style="margin-left: 80px">
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">1. &nbsp;Fuente Osmeña Circle</p>
+                <div class="content">
+                    <img src="~/images/fuente.jpg" class="image" alt="Fuente Osmeña Circle">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        Cebu City's beating heart lies at Fuente Osmeña Circle. This vibrant landmark isn't just a modern plaza
+                        with a central fountain, but a space steeped in history. Originally a marketplace in the 18th century,
+                        it was transformed into a park in 1912 and named after Sergio Osmeña, the first Cebuano president of 
+                        the Philippines. Today, the park bustles with activity, offering a glimpse into modern Cebuano life. 
+                        Locals and tourists unwind on benches, jog along pathways, or picnic on the vast green field. The 
+                        iconic central fountain, a more recent addition, provides a cool respite and a perfect spot for photos.  Come nightfall, the park illuminates with colorful lights, transforming into a lively gathering place.  This fusion of modern recreation and historic resonance makes Fuente Osmeña a must-visit for anyone seeking a taste of Cebu City's vibrant soul.
+                        <br>
+                        <br>
+                        <b>Location: </b>Fuente Osmeña Cir, Cebu City, 6000 Cebu
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">2. &nbsp;Museo de Sugbo</p>
+                <div class="content">
+                    <img src="~/images/museosugbo.jpg" class="image" alt="Museo de Sugbo">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        The Museo Sugbo is a treasure trove of 
+                        Cebu's rich history and culture. Housed within the walls of a repurposed prison, the Cárcel de Cebú,
+                        built in the 1870s, the museum itself is a piece of history.  Walk through its sturdy coral-stone walls 
+                        and explore various galleries dedicated to different eras of Cebu's story.  From pre-colonial artifacts
+                        to captivating exhibits showcasing Spanish colonial influences, the American period, and even World War
+                        II, the Museo Sugbo offers a comprehensive journey through Cebu's past.  This historic setting and its 
+                        insightful displays make the Museo Sugbo a must-visit for anyone wanting to delve deeper into the soul
+                        of Cebu. Come nightfall, the park illuminates with colorful lights, transforming into a lively gathering
+                        place.  This fusion of modern recreation and historic resonance makes Fuente Osmeña a must-visit for
+                        anyone seeking a taste of Cebu City's vibrant soul.
+                        <br>
+                        <br>
+                        <b>Location: </b>731 M. J. Cuenco Ave, Cebu City, 6000 Cebu
+                    </p>
+                </div>
+                <p class="acme-regular" style="font-size: 40px;margin-top: 50px">2. &nbsp;Tops Lookout</p>
+                <div class="content">
+                    <img src="~/images/tops.jpg" class="image" alt="Tops Lookout">
+                    <p class="chivo-font description">
+                        <b>Description:</b>
+                        High above the bustle of Cebu City sits Tops Lookout, a breezy haven offering panoramic cityscapes. 
+                        Perched atop Mount Busay, it's not just a viewpoint but a tranquil escape.  Imagine cool mountain air
+                        and sweeping vistas encompassing the city skyline, Mactan Island, and even the distant Cebu coastline
+                        on a clear day.  Locals and tourists alike come here to soak in the scenery, snap breathtaking photos, 
+                        or enjoy a picnic with a view.  While there aren't extensive historical ties, Tops Lookout provides a
+                        unique perspective on the city, allowing visitors to appreciate the sprawl of Cebu nestled amidst 
+                        rolling hills and the vast sea.
+                        <br>
+                        <br>
+                        <b>Location: </b>Cebu Tops Rd, Cebu City, 6000 Cebu
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        setInterval(function () {
+            plusSlides(1);
+        }, 3000); // Change image every 3 seconds
+
+        var mybutton = document.getElementById("scrollTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    </body>
+</html>

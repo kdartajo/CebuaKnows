@@ -1,0 +1,58 @@
+﻿@model             GuestResponse;
+@{
+	Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width:device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <title>
+        Publish Tour
+    </title>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding:20px;">
+            <a class="navbar-brand" href="#">CebuaKnows</a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link " asp-action="Index">Home</a>
+                    <a class="nav-item nav-link" asp-action="ListReponses">Tour</a>
+                    <a class="nav-item nav-link active" asp-action="RsvpForm">Publish Tour</a>
+                    <a class="nav-item nav-link " href="#">Contacts</a>
+                </div>
+            </div>
+        </nav>
+        <div>
+            <h3 class="bg-danger text-white text-center m-2 p-2">Create a Tour!!!</h3>
+            <form asp-action="RsvpForm" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="m-2"></div>
+                <div class="form-group">
+                    <label asp-for="Author" class="form-label">Author: </label>
+                    <input type="text" asp-for="Author" class="form-control input-validation-error" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Place" class="form-label">Place: </label>
+                    <input type="text" asp-for="Place" class="form-control input-validation-error" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Description" class="form-label">Description: </label>
+                    <input type="text" asp-for="Description" class="form-control input-validation-error" />
+                   
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="ImageName" class="form-label">Image Name: </label>
+                    <input type="file" asp-for="ImageName" class="form-control input-validation-error" />
+                </div>
+                
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
